@@ -20,6 +20,7 @@ public class HelloController {
 	@GetMapping("/hello")
 //	@ResponseBody
 	public String hello(Model model) {
+		model.addAttribute("message1", "Hong gildong");
 		model.addAttribute("message", "Hello, Thymeleaf");
 		return "hello";
 	}
