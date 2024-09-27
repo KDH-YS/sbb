@@ -12,7 +12,7 @@ public class HelloController {
     @ResponseBody 
     public String saying() { 
         return "<form action='/hello' method='get'>"
-                + "<button type='submit'>명언 보기</button>"
+                + "<button type='submit'>헬로</button>"
                 + "</form>"+"<form action='/e' method='get'>"
                 + "<button type='submit'>이벤트</button>"
                 + "</form>"; 
@@ -20,9 +20,14 @@ public class HelloController {
 	@GetMapping("/hello")
 //	@ResponseBody
 	public String hello(Model model) {
-		model.addAttribute("message1", "Hong gildong");
-		model.addAttribute("message", "Hello, Thymeleaf");
+		model.addAttribute("이름", "Hong gildong");
+		model.addAttribute("message", "Hello");
 		return "hello";
+	}
+	
+	@GetMapping("/e")
+	public String event() {
+		return "event";
 	}
 
 	
